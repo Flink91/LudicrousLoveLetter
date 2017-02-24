@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ludicrous Love Letter</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <br>
+  <h2>Welcome to Ludicrous Love Letter!</h2>
+  <p>
+    This app will ask you for some input words from which it creates beautiful stories for you! Like a beautiful love letter or a story about a pillow fight.
+  </p>
+
+<br>
+  <button block ion-button outline item-right icon-left color="danger" [navPush]="inputPage" [navParams]="params">  <ion-icon name="heart"></ion-icon>Start Love Letter</button>
+<br>
+  <button block ion-button outline item-right icon-left color="primary" [navPush]="input2Page" [navParams]="params">  <ion-icon name="flame"></ion-icon>Start Pillow Fight</button>
+
+</ion-content>
