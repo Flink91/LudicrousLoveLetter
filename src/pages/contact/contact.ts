@@ -57,7 +57,6 @@ export class ContactPage {
   }
 
   showConfirm(story) {
-    let res = false;
     let confirm = this.alertCtrl.create({
       title: 'Really delete?',
       buttons: [

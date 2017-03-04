@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { StoryData } from '../../providers/story-data';
 import { NavController, NavParams } from 'ionic-angular';
-import { ContactPage } from '../contact/contact';
 
 /*
   Generated class for the Loveletter page.

@@ -14,8 +14,7 @@ export class StoryData {
     this.storage.get('storyData').then((data) => {
       console.log(typeof(data));
       console.warn("1. GOT: " + JSON.stringify(data));
-
-      this.stories = data;
+      if (data != null){this.stories = data;}
       this.stories.push(inputData);
       console.warn("2. NACH PUSH: " + JSON.stringify(this.stories));
 
