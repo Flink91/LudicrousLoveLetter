@@ -19,27 +19,63 @@
 
     <p>Number of stories: {{stories.length}}</p>
 
-    <ion-card *ngFor="let story of stories">
+    <ion-card *ngFor="let story of stories; let i = index;">
       <p padding style="float:left;">{{story.title}}, {{story.date}}</p>
-      <button style="float:right;" (click)="showConfirm(story)"><ion-icon name="trash"></ion-icon></button>
-      <ion-card-header style="clear:both">
-        Dear <span>{{story.inputs.data.param1}}</span>,
-      </ion-card-header>
-      <ion-card-content>
-        You are extremly
-        <span>{{story.inputs.data.param3}}</span> and I
-        <span>{{story.inputs.data.param4}}</span> you! I want kiss your
-        <span>{{story.inputs.data.param5}}</span>
-        <span>{{story.inputs.data.param6}}</span> times. You make my
-        <span>{{story.inputs.data.param7}}</span> burn with desire. When I first saw you, I
-        <span>{{story.inputs.data.param8}}</span> stared at you and fell in love. Will you <span>{{story.inputs.data.param9}}</span> with me? Don`t let your parents discourage you, they are just jealous of our
-        <span>{{story.inputs.data.param10}}</span> .
+      <button style="float:right;" (click)="showConfirm(i)"><ion-icon name="trash"></ion-icon></button>
 
-        <br><br>Yours forever, <span>{{story.inputs.data.param2}}</span><br>
-        <div class="herz">
-          <ion-icon style="display:inline;" name="heart"></ion-icon>
-        </div>
-      </ion-card-content>
+      <div *ngIf="story.title=='Love Letter'">
+        <ion-card-header style="clear:both">
+          Dear <span>{{story.inputs.data.param1}}</span>,
+        </ion-card-header>
+        <ion-card-content>
+          You are extremly
+          <span>{{story.inputs.data.param3}}</span> and I
+          <span>{{story.inputs.data.param4}}</span> you! I want kiss your
+          <span>{{story.inputs.data.param5}}</span>
+          <span>{{story.inputs.data.param6}}</span> times. You make my
+          <span>{{story.inputs.data.param7}}</span> burn with desire. When I first saw you, I
+          <span>{{story.inputs.data.param8}}</span> stared at you and fell in love. Will you <span>{{story.inputs.data.param9}}</span> with me? Don`t let your parents discourage you, they are just jealous of our
+          <span>{{story.inputs.data.param10}}</span> .
+
+          <br><br>Yours forever, <span>{{story.inputs.data.param2}}</span><br>
+          <div class="herz">
+            <ion-icon style="display:inline;" name="heart"></ion-icon>
+          </div>
+        </ion-card-content>
+      </div>
+      <div *ngIf="story.title=='Pillow Fight'" style="clear:both">
+        <ion-card-content>
+          The last time I went to a sleepover a/an
+          <span>{{story.inputs.data.param1}}</span>
+          pillow fight broke out. Out of nowhere,
+          <span>{{story.inputs.data.param2}}</span>
+          grabbed her
+          <span>{{story.inputs.data.param3}}</span>
+          <span>{{story.inputs.data.param4}}</span>
+          and began swinging it at anyone close to her. Soon, everyone else joined in! At one point, I got hit right in the back of my
+          <span>{{story.inputs.data.param5}}</span>
+          . As soon as I recovered, I tossed my
+          <span>{{story.inputs.data.param6}}</span>
+          at
+          <span>{{story.inputs.data.param7}}</span>
+          ´s
+          <span>{{story.inputs.data.param8}}</span>
+          , but I missed. Instead, I knocked over an expensive
+          <span>{{story.inputs.data.param9}}</span>
+          and my pillow split open!
+          <span>{{story.inputs.data.param10}}</span>
+          flew everywhere, covering the room in a layer of
+          <span>{{story.inputs.data.param11}}</span>
+          feathers. The fighting stopped after
+          <span>{{story.inputs.data.param12}}</span>
+          , when we all broke out in
+          <span>{{story.inputs.data.param13}}</span>
+          laughter. The fun ended when we realized we had to clean up the
+          <span>{{story.inputs.data.param14}}</span>
+          mess!
+        <div class="herz"> <ion-icon style="display:inline;" name="flame"></ion-icon></div>
+        </ion-card-content>
+      </div>
     </ion-card>
 
   </div>

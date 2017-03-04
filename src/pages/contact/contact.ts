@@ -43,11 +43,13 @@ export class ContactPage {
   }
 
   deleteStory(story) {
+    console.log(story);
 
     //console.log(JSON.stringify(this.stories));
-    this.storyData.deleteData(this.stories[story]);
+    console.log("Löschaktion: " + story);
+    this.storyData.deleteData(story);
 
-    this.stories.splice(story, 1);
+    //this.stories.splice(story, 1);
 
     //ngfor not updating...workaround
     setTimeout(() => {
