@@ -6,30 +6,42 @@
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
 
-  <p *ngIf="!hasData">Nothing here!</p>
-  <p>Number of stories: {{stories.length}}</p>
+  <div *ngIf="!hasData">
 
-  <ion-card *ngFor="let story of stories">
-    <p padding>{{story.title}}</p>
-    <ion-card-header>
-      Dear <span>{{story.inputs.data.param1}}</span>,
-    </ion-card-header>
-    <ion-card-content>
-      You are extremly
-      <span>{{story.inputs.data.param3}}</span> and I
-      <span>{{story.inputs.data.param4}}</span> you! I want kiss your
-      <span>{{story.inputs.data.param5}}</span>
-      <span>{{story.inputs.data.param6}}</span> times. You make my
-      <span>{{story.inputs.data.param7}}</span> burn with desire. When I first saw you, I
-      <span>{{story.inputs.data.param8}}</span> stared at you and fell in love. Will you <span>{{story.inputs.data.param9}}</span> with me? Don`t let your parents discourage you, they are just jealous of our
-      <span>{{story.inputs.data.param10}}</span> .
+    <p>Nothing here!</p>
 
-      <br><br>Yours forever, <span>{{story.inputs.data.param2}}</span><br>
-      <div class="herz">
-        <ion-icon style="display:inline;" name="heart"></ion-icon>
-      </div>
-    </ion-card-content>
-  </ion-card>
+  </div>
+
+  <div *ngIf="hasData">
+
+    <p>Number of stories: {{stories.length}}</p>
+
+    <ion-card *ngFor="let story of stories">
+      <p padding style="float:left;">{{story.title}}, {{story.date}}</p>
+      <button style="float:right;" (click)="showConfirm(story)"><ion-icon name="trash"></ion-icon></button>
+      <ion-card-header style="clear:both">
+        Dear <span>{{story.inputs.data.param1}}</span>,
+      </ion-card-header>
+      <ion-card-content>
+        You are extremly
+        <span>{{story.inputs.data.param3}}</span> and I
+        <span>{{story.inputs.data.param4}}</span> you! I want kiss your
+        <span>{{story.inputs.data.param5}}</span>
+        <span>{{story.inputs.data.param6}}</span> times. You make my
+        <span>{{story.inputs.data.param7}}</span> burn with desire. When I first saw you, I
+        <span>{{story.inputs.data.param8}}</span> stared at you and fell in love. Will you <span>{{story.inputs.data.param9}}</span> with me? Don`t let your parents discourage you, they are just jealous of our
+        <span>{{story.inputs.data.param10}}</span> .
+
+        <br><br>Yours forever, <span>{{story.inputs.data.param2}}</span><br>
+        <div class="herz">
+          <ion-icon style="display:inline;" name="heart"></ion-icon>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
 </ion-content>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { StoryData } from '../../providers/story-data';
 import { NavController, NavParams } from 'ionic-angular';
+import { ContactPage } from '../contact/contact';
 
 /*
   Generated class for the Loveletter page.
@@ -26,9 +28,10 @@ export class PillowFightPage {
   timeSpan1 ='';
   adjective4 = '';
   adjective5 ='';
+  myDate: String = new Date().toISOString().slice(0,10);
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storyData:StoryData) {
     this.adjective1 = navParams.get('param1');
     this.personInRoom1 = navParams.get('param2');
     this.adjective2 = navParams.get('param3');
@@ -46,7 +49,15 @@ export class PillowFightPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PillowFightPage');
+    this.storyData.saveData({
+      title : 'Pillow Fight',
+      date : this.myDate,
+      inputs : this.navParams
+    });
+  }
+
+  saveStory(){
+
   }
 
 }
