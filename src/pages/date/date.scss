@@ -1,0 +1,29 @@
+page-date {
+  ion-content {
+    background: url('../assets/img/bg.jpg');
+    background-size: cover;
+  }
+
+  .herz {
+    margin: 0 auto;
+    width: 0;
+  }
+
+  ion-card {
+    .card-header-md,
+    ion-card-header {
+      font-size: 1.7rem;
+    }
+
+    .card-content-md,
+    ion-card-content {
+      font-size: 1.7rem;
+    }
+
+    span {
+      min-width: 20px;
+      border-bottom: 1px solid grey;
+      color: #8a0808;
+    }
+  }
+}

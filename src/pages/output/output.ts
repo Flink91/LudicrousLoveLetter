@@ -1,4 +1,4 @@
-//too lazy to rename this from contact to savedstories
+//too lazy to rename this from output to savedstories
 import { Component } from '@angular/core';
 
 import { NavController, AlertController } from 'ionic-angular';
@@ -6,10 +6,10 @@ import { Storage } from '@ionic/storage';
 import { StoryData } from '../../providers/story-data';
 
 @Component({
-  selector: 'page-contact',
-  templateUrl: 'contact.html'
+  selector: 'page-output',
+  templateUrl: 'output.html'
 })
-export class ContactPage {
+export class OutputPage {
 
   public hasData = false;
   public stories = [];
@@ -29,7 +29,7 @@ export class ContactPage {
   loadData() {
     this.storage.get('storyData').then((data) => {
       if (data != undefined) {
-        console.log("got! in contact " + JSON.stringify(data));
+        console.log("got! in output " + JSON.stringify(data));
         this.hasData = true;
 
         console.log("was geht mit data: " + typeof (data));

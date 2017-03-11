@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Saved Stories
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngIf="!hasData">
+
+    <div class="bar bar-subheader">
+      <h2 class="title">Nothing here yet!</h2>
+    </div>
+
+  </div>
+
+  <div *ngIf="hasData">
+
+    <div full class="bar bar-subheader bar-assertive">
+      <h2 class="title" style="text-align: center;font-size: 2rem;margin: 15px;color: #ccc;">Number of stories: {{stories.length}}</h2>
+    </div>
+
+    <ion-card *ngFor="let story of stories; let i = index;">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col width-10>
+          </ion-col>
+          <ion-col width-80 style="text-align:center;">
+            <small>{{story.date |date: 'MM/dd/yyyy'}}</small>
+            <h2 style="margin-top: 0px;font-size: 1.4em;">{{story.title}}</h2>
+          </ion-col>
+
+          <ion-col width-10>
+            <button class="trashButton" ion-button icon-only (click)="showConfirm(i)"><ion-icon name="trash"></ion-icon></button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div *ngIf="story.title=='Love Letter'">
+        <ion-card-header style="clear:both">
+          Dear <span>{{story.inputs.data.param1}}</span>,
+        </ion-card-header>
+        <ion-card-content>
+          You are extremly
+          <span>{{story.inputs.data.param3}}</span> and I
+          <span>{{story.inputs.data.param4}}</span> you! I want kiss your
+          <span>{{story.inputs.data.param5}}</span>
+          <span>{{story.inputs.data.param6}}</span> times. You make my
+          <span>{{story.inputs.data.param7}}</span> burn with desire. When I first saw you, I
+          <span>{{story.inputs.data.param8}}</span> stared at you and fell in love. Will you <span>{{story.inputs.data.param9}}</span> with me? Don`t let your parents discourage you, they are just jealous of our
+          <span>{{story.inputs.data.param10}}</span> .
+
+          <br><br>Yours forever, <span>{{story.inputs.data.param2}}</span><br>
+          <div class="herz">
+            <ion-icon style="display:inline;" name="heart"></ion-icon>
+          </div>
+        </ion-card-content>
+
+      </div>
+      <div *ngIf="story.title=='Pillow Fight'" style="clear:both">
+
+        <ion-card-header style="clear:both">
+          The last time...
+        </ion-card-header>
+
+        <ion-card-content>
+          I went to a sleepover a/an
+          <span>{{story.inputs.data.param1}}</span> pillow fight broke out. Out of nowhere,
+          <span>{{story.inputs.data.param2}}</span> grabbed her
+          <span>{{story.inputs.data.param3}}</span>
+          <span>{{story.inputs.data.param4}}</span> and began swinging it at anyone close to her. Soon, everyone else joined in! At one point, I got hit right in the back of my
+          <span>{{story.inputs.data.param5}}</span> . As soon as I recovered, I tossed my
+          <span>{{story.inputs.data.param6}}</span> at
+          <span>{{story.inputs.data.param7}}</span> ´s
+          <span>{{story.inputs.data.param8}}</span> , but I missed. Instead, I knocked over an expensive
+          <span>{{story.inputs.data.param9}}</span> and my pillow split open!
+          <span>{{story.inputs.data.param10}}</span> flew everywhere, covering the room in a layer of
+          <span>{{story.inputs.data.param11}}</span> feathers. The fighting stopped after
+          <span>{{story.inputs.data.param12}}</span> , when we all broke out in
+          <span>{{story.inputs.data.param13}}</span> laughter. The fun ended when we realized we had to clean up the
+          <span>{{story.inputs.data.param14}}</span> mess!<br>
+          <div class="herz">
+            <ion-icon style="display:inline;" name="flame"></ion-icon>
+          </div>
+        </ion-card-content>
+      </div>
+      <div *ngIf="story.title=='How to get a Date'" style="clear:both">
+        <ion-card-header style="clear:both">
+          It's simple.
+        </ion-card-header>
+        <ion-card-content>
+          Turn the
+          <span>{{story.inputs.data.param1}}</span> . Make him/her want
+          <span>{{story.inputs.data.param2}}</span> to date you. Make sure you're always dressed to
+          <span>{{story.inputs.data.param3}}</span> Each and every day, wear a/an
+          <span>{{story.inputs.data.param4}}</span> that you know shows off your
+          <span>{{story.inputs.data.param5}}</span> to
+          <span>{{story.inputs.data.param6}}</span> advantage and make your
+          <span>{{story.inputs.data.param7}}</span> look like a million
+          <span>{{story.inputs.data.param8}}</span> . Even if the two of you make meaningful
+          <span>{{story.inputs.data.param9}}</span> contact, don't admit it. No hugs or
+          <span>{{story.inputs.data.param10}}</span> . Just shake his/her
+          <span>{{story.inputs.data.param11}}</span> firmly. And remember, when he/she asks you out, even though a chill may run down your
+          <span>{{story.inputs.data.param12}}</span> and you can't stop your
+          <span>{{story.inputs.data.param13}}</span> from
+          <span>{{story.inputs.data.param14}}</span> , just play it
+          <span>{{story.inputs.data.param15}}</span> . Take a long pause before answering in a very
+          <span>{{story.inputs.data.param16}}</span> voice. "I'll have to
+          <span>{{story.inputs.data.param17}}</span> it over."<br>
+          <div class="herz">
+            <ion-icon style="display:inline;" name="flame"></ion-icon>
+          </div>
+        </ion-card-content>
+      </div>
+    </ion-card>
+
+  </div>
+
+</ion-content>
